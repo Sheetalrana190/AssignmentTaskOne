@@ -26,6 +26,17 @@ namespace AssignmentTaskOne
             Console.WriteLine("\nEnter number of trips to Montreal:");
             int tripsMontreal = int.Parse(Console.ReadLine());
 
+            // code to calculate total number of business trips
+            int totalTrips = tripsCalgary + tripsVancouver + tripsMontreal;
+            Console.WriteLine("Total numbers of Business Trips: " + totalTrips);
+
+            // code to calculate the total amount of money spent on all the businss trips
+            double totalAmount = (tripsCalgary * torontoToCalgary) + (tripsVancouver * torontoToVancouver) + (tripsMontreal * torontoToMontreal);
+            Console.WriteLine("Total amount spent on all the Business Trips: " + totalAmount);
+
+            // code to calculate average tavel expenses per Trip
+            double average = totalAmount / totalTrips;
+            Console.WriteLine("Average tavel expenses per Trip: " + average);
         }
     }
 }
