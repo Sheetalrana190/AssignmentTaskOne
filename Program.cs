@@ -16,16 +16,7 @@ namespace AssignmentTaskOne
             int torontoToCalgary = 1350 * 2;
             int torontoToVancouver = 1500 * 2;
             int torontoToMontreal = 575 * 2;
-            // Code to enter number of trips taken
-            //Console.WriteLine("Enter number of trips to Calgary:");
-            //int tripsCalgary = int.Parse(Console.ReadLine());
-
-            //Console.WriteLine("\nEnter number of trips to Vancouver:");
-            //int tripsVancouver = int.Parse(Console.ReadLine());
-
-            //Console.WriteLine("\nEnter number of trips to Montreal:");
-            //int tripsMontreal = int.Parse(Console.ReadLine());
-
+            // initializing variable to get the valid number of trips from the function GetValidTrips
             int tripsCalgary = GetValidTrips("Calgary");
             int tripsVancouver = GetValidTrips("Vancouver");
             int tripsMontreal = GetValidTrips("Montreal");
