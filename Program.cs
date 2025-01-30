@@ -12,7 +12,11 @@ namespace AssignmentTaskOne
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            // initialize variable for Round-trips price
+            int torontoToCalgary = 1350 * 2;
+            int torontoToVancouver = 1500 * 2;
+            int torontoToMontreal = 575 * 2;
+
         }
     }
 }
