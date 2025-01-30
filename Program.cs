@@ -42,26 +42,29 @@ namespace AssignmentTaskOne
             double average = totalAmount / totalTrips;
             Console.WriteLine("Average tavel expenses per Trip: $" + average.ToString("C"));
         }
-        //fuction to catch invalid entry of negative number for user input numbers of trips
+        //fuction to catch invalid entry of negative number or character for user input numbers of trips
         static int GetValidTrips(string city)
         {
-            try
+            int trips = -1;
+            while (trips < 0)
             {
-                Console.WriteLine($"Enter number of trips to {city}:");
-                int trips = int.Parse(Console.ReadLine());
-
-                if (trips < 0)
+                try
                 {
-                    throw new ArgumentOutOfRangeException();
-                }
+                    Console.WriteLine($"Enter number of trips to {city}:");
+                    trips = int.Parse(Console.ReadLine());
 
-                return trips;
+                    if (trips < 0)
+                    {
+                        Console.WriteLine("Number of trips cannot be negative. Please enter a non-negative number.");
+                    }
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Invalid input. Please enter a valid non-negative number.");
+                }
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error: {ex.Message}. Please enter a valid, non-negative number.");
-                return 0; // Default to 0 if invalid input
-            }
+
+            return trips;
 
         }
     }
