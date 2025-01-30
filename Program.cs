@@ -32,11 +32,11 @@ namespace AssignmentTaskOne
 
             // code to calculate the total amount of money spent on all the businss trips
             double totalAmount = (tripsCalgary * torontoToCalgary) + (tripsVancouver * torontoToVancouver) + (tripsMontreal * torontoToMontreal);
-            Console.WriteLine("Total amount spent on all the Business Trips: $" + totalAmount);
+            Console.WriteLine("Total amount spent on all the Business Trips: $" + totalAmount.ToString("C"));
 
             // code to calculate average tavel expenses per Trip
             double average = totalAmount / totalTrips;
-            Console.WriteLine("Average tavel expenses per Trip: $" + average);
+            Console.WriteLine("Average tavel expenses per Trip: $" + average.ToString("C"));
         }
     }
 }
