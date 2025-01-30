@@ -17,14 +17,18 @@ namespace AssignmentTaskOne
             int torontoToVancouver = 1500 * 2;
             int torontoToMontreal = 575 * 2;
             // Code to enter number of trips taken
-            Console.WriteLine("Enter number of trips to Calgary:");
-            int tripsCalgary = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter number of trips to Calgary:");
+            //int tripsCalgary = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("\nEnter number of trips to Vancouver:");
-            int tripsVancouver = int.Parse(Console.ReadLine());
+            //Console.WriteLine("\nEnter number of trips to Vancouver:");
+            //int tripsVancouver = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("\nEnter number of trips to Montreal:");
-            int tripsMontreal = int.Parse(Console.ReadLine());
+            //Console.WriteLine("\nEnter number of trips to Montreal:");
+            //int tripsMontreal = int.Parse(Console.ReadLine());
+
+            int tripsCalgary = GetValidTrips("Calgary");
+            int tripsVancouver = GetValidTrips("Vancouver");
+            int tripsMontreal = GetValidTrips("Montreal");
 
             // code to calculate total number of business trips
             int totalTrips = tripsCalgary + tripsVancouver + tripsMontreal;
@@ -37,6 +41,28 @@ namespace AssignmentTaskOne
             // code to calculate average tavel expenses per Trip
             double average = totalAmount / totalTrips;
             Console.WriteLine("Average tavel expenses per Trip: $" + average.ToString("C"));
+        }
+        //fuction to catch invalid entry of negative number for user input numbers of trips
+        static int GetValidTrips(string city)
+        {
+            try
+            {
+                Console.WriteLine($"Enter number of trips to {city}:");
+                int trips = int.Parse(Console.ReadLine());
+
+                if (trips < 0)
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+
+                return trips;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}. Please enter a valid, non-negative number.");
+                return 0; // Default to 0 if invalid input
+            }
+
         }
     }
 }
